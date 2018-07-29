@@ -6,7 +6,11 @@
   "author": "Kacper Goliński",
   "license": "MIT",
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "pg": "^7.4.3",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "^0.2.7"
+  },
   "devDependencies": {
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.9.2",
