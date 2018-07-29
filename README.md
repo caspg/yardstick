@@ -14,6 +14,10 @@ Monorepo project, written in Typescript and managed by [Lerna](https://github.co
 * [yarn v 1.5](https://yarnpkg.com/lang/en/)
 * [lerna v 3.0](https://github.com/lerna/lerna)
 
+## Packages
+
+* [db](packages/db) - Database access layer
+
 
 ## Creating new typescript package
 ---
