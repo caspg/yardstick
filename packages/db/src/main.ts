@@ -1,17 +1,11 @@
 import 'reflect-metadata'
-import { createConnection, getCustomRepository, getConnectionOptions } from 'typeorm'
+import { createConnection, getCustomRepository } from 'typeorm'
 
 import { UserRepository } from './db/users/user.repository'
 
 async function connectDb(): Promise<object> {
-  // read connection options from ormconfig.js file
-  const opts = await getConnectionOptions()
-  const connectionOptions = Object.assign({}, opts, {
-    // TODO(kacper): when in production we should point to `./dist/db/**/*.entity.js
-    entities: ['./src/db/**/*.entity.ts'],
-  })
-
-  await createConnection(connectionOptions)
+  // reads connection options from ormconfig.js file
+  await createConnection()
 
   const userRepo = getCustomRepository(UserRepository)
 

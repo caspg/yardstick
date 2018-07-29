@@ -1,6 +1,6 @@
 # Yardstick.Db
 
-Database access layer
+Database access layer, handled by [TypeORM](http://typeorm.io).
 
 ## Installation
 

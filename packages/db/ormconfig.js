@@ -9,4 +9,6 @@ module.exports = {
   cli: {
     migrationsDir: 'src/migrations',
   },
+  // TODO(kacper): when in production we should point to `./dist/db/**/*.entity.js
+  entities: ['./src/db/**/*.entity.ts'],
 }
