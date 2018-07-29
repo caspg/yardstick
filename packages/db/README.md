@@ -43,3 +43,5 @@ migrations:revert
 
 * create .js scripts
   * migrations.js -> in PROD it will point to ./dist, in DEV to ./src
+
+* allow using ENV variables to config orm

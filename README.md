@@ -37,3 +37,15 @@ packages/
     package.json
     tsconfig.json
 ```
+
+## TODO
+
+* create `web` package (?https://nestjs.com/?)
+
+* support ENV variables (https://github.com/motdotla/dotenv?)
+
+* setup `Docker`
+
+* setup tests
+
+* setup TravisCI
