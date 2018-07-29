@@ -1,10 +1,12 @@
 # YardStick
 
+
 ## Description
 
 Monorepo project, written in Typescript and managed by [Lerna](https://github.com/lerna/lerna). This project consists of the following components:
 
 * [db](packages/db) - Database access layer
+* [core][packages/core] - Core business logic of the application
 
 
 ## Prerequisites
@@ -22,7 +24,7 @@ Create new folder inside `./packages/` directory and then run:
 ```bash
 $ yarn init
 $ yarn add typescript@2.9.2
-$ npx tsc --init # Executes local binaries
+$ npx tsc --init # npx executes local binaries
 ```
 
 this should result with following directory structure:

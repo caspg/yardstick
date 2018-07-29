@@ -37,7 +37,3 @@ to revert migrations:
 ```bash
 migrations:revert
 ```
-
-## Running the app
-
-TODO:
