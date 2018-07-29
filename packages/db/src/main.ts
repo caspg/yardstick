@@ -33,8 +33,12 @@ connectDb()
       email: 'yada@yada.com',
     }
 
-    const user = await db.userRepo.create(userAttrs)
-    console.log('User created: ', user)
+    try {
+      const user = await db.userRepo.create(userAttrs)
+      console.log('User created: ', user)
+    } catch (error) {
+      console.log('There was an error during saving to db')
+    }
   })
 
 export { connectDb }

@@ -29,19 +29,15 @@ yarn run create:migration migrationName
 to run migrations:
 
 ```bash
-yarn run migrations:dev
+yarn run migrations
 ```
 
 to revert migrations:
 
 ```bash
-migrations:revert:dev
+migrations:revert
 ```
 
 ## Running the app
 
 TODO:
-
-* add migrations and remove `synchronize: true`
-* validate user.email uniqueness
-* create indexes for id and email

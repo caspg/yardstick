@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner, Table, TableIndex } from 'typeorm'
+import { TableUnique } from 'typeorm/schema-builder/table/TableUnique'
 
 export class createUsers1532892540357 implements MigrationInterface {
 
@@ -30,6 +31,10 @@ export class createUsers1532892540357 implements MigrationInterface {
         },
       ],
     }))
+
+    await queryRunner.query(`
+      ALTER TABLE "user" ADD CONSTRAINT user_unique_email UNIQUE ("email");
+    `)
 
     await queryRunner.createIndex('user', new TableIndex({
       name: 'IDX_USER_EMAIL',
