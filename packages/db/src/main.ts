@@ -22,13 +22,18 @@ async function connectDb(opts: PostgresConnectionOptions): Promise<object> {
   }
 }
 
+/**
+ * TODO(kacper):
+ *  bellow lines are just example of usage of `connectDb`
+ *  to remove
+ */
 const opts: PostgresConnectionOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
   username: 'postgres',
   database: 'yardstick_dev',
-  synchronize: true, // TODO only for development
+  synchronize: true, // TODO(kacper) only for development
   logging: false,
 }
 
@@ -43,3 +48,5 @@ connectDb(opts)
     const user = await db.userRepo.create(userAttrs)
     console.log('User created: ', user)
   })
+
+export { connectDb }
