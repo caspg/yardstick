@@ -6,7 +6,7 @@
 Monorepo project, written in Typescript and managed by [Lerna](https://github.com/lerna/lerna). This project consists of the following components:
 
 * [db](packages/db) - Database access layer
-* [core][packages/core] - Core business logic of the application
+* [core](packages/core) - Core business logic of the application
 
 
 ## Prerequisites
