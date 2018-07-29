@@ -6,6 +6,11 @@
   "author": "Kacper Goliński",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "create:migration": "typeorm migration:create -n",
+    "migrations:dev": "tsc && typeorm migration:run",
+    "migrations:revert:dev": "tsc && typeorm migration:revert"
+  },
   "dependencies": {
     "pg": "^7.4.3",
     "reflect-metadata": "^0.1.12",

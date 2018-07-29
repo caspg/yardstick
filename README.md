@@ -10,6 +10,7 @@ Monorepo project, written in Typescript and managed by [Lerna](https://github.co
 ---
 
 * node v9.11
+* PostgreSQL v10.3
 * [yarn v 1.5](https://yarnpkg.com/lang/en/)
 * [lerna v 3.0](https://github.com/lerna/lerna)
 
