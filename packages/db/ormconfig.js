@@ -5,7 +5,8 @@ module.exports = {
   username: 'postgres',
   database: 'yardstick_dev',
   logging: false,
-  migrations: ['dist/migrations/*.js'],
+  // TODO(kacper): in production we should point to .js files
+  migrations: ['src/migrations/*.ts'],
   cli: {
     migrationsDir: 'src/migrations',
   },

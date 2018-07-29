@@ -37,3 +37,9 @@ to revert migrations:
 ```bash
 migrations:revert
 ```
+
+
+ ## TODO
+
+* create .js scripts
+  * migrations.js -> in PROD it will point to ./dist, in DEV to ./src
