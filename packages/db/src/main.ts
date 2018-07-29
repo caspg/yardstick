@@ -1,36 +1,45 @@
 import 'reflect-metadata'
 import { createConnection, getCustomRepository } from 'typeorm'
+import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions'
 
 import { User } from './db/users/user.entity'
 import { UserRepository } from './db/users/user.repository'
 
-function connectDb() {
-  createConnection({
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    database: 'yardstick_dev',
-    synchronize: true, // TODO only for development
-    logging: false,
+async function connectDb(opts: PostgresConnectionOptions): Promise<object> {
+  // Only Db package should know about entities.
+  const connectionOptions = Object.assign({}, opts, {
     entities: [
       User,
     ],
-  }).then(async (connection) => {
-    // TODO(kacper) remove me
-    const userRepo = getCustomRepository(UserRepository)
-
-    const user = await userRepo.create({
-      firstName: 'Yada',
-      lastName: 'elo',
-      email: 'email@elo.pl',
-    })
-
-    console.log('user created: ', user)
-
-  }).catch((error) => {
-    console.log(error)
   })
+
+  await createConnection(opts)
+
+  const userRepo = getCustomRepository(UserRepository)
+
+  return {
+    userRepo,
+  }
 }
 
-connectDb()
+const opts: PostgresConnectionOptions = {
+  type: 'postgres',
+  host: 'localhost',
+  port: 5432,
+  username: 'postgres',
+  database: 'yardstick_dev',
+  synchronize: true, // TODO only for development
+  logging: false,
+}
+
+connectDb(opts)
+  .then(async (db: any) => {
+    const userAttrs = {
+      firstName: 'Fred',
+      lastName: 'Flinston',
+      email: 'yada@yada.com',
+    }
+
+    const user = await db.userRepo.create(userAttrs)
+    console.log('User created: ', user)
+  })

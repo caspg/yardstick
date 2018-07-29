@@ -10,4 +10,8 @@ $ yarn install
 
 ## Running the app
 
-TODO
+TODO:
+
+* add migrations and remove `synchronize: true`
+* validate user.email uniqueness
+* create indexes for id and email
