@@ -1,26 +1,21 @@
 # YardStick
 
 ## Description
----
 
-Monorepo project, written in Typescript and managed by [Lerna](https://github.com/lerna/lerna).
+Monorepo project, written in Typescript and managed by [Lerna](https://github.com/lerna/lerna). This project consists of the following components:
+
+* [db](packages/db) - Database access layer
 
 
 ## Prerequisites
----
 
 * node v9.11
 * PostgreSQL v10.3
 * [yarn v 1.5](https://yarnpkg.com/lang/en/)
 * [lerna v 3.0](https://github.com/lerna/lerna)
 
-## Packages
-
-* [db](packages/db) - Database access layer
-
 
 ## Creating new typescript package
----
 
 Create new folder inside `./packages/` directory and then run:
 
