@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      NODE_ENV: 'development'
+    volumes:
+      - .:/app            # share your code with the containers
+      # - /app/node_modules # container has its own node_modules directory
+    ports:
+      - "3000:3000"
+    command: yarn start:dev

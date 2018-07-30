@@ -6,10 +6,26 @@
 
 description
 
+## Prerequisites
+
+* node v10.7
+* PostgreSQL v10.3
+* [Yarn v 1.5](https://yarnpkg.com/lang/en/)
+
 ## Installation
 
 ```bash
 $ npm install
+```
+
+## Running the app [DOCKER style]
+
+Make sure you have docker installed locally [click](https://www.docker.com/community-edition#/download)
+
+then run:
+
+```bash
+$ docker-compose -f docker-compose.dev.yml up
 ```
 
 ## Running the app
@@ -41,8 +57,6 @@ $ npm run test:cov
 ## TODO
 
 * ENV variables
-
-* setup Docker
 
 * create admin-web module
 
