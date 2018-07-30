@@ -1,6 +1,8 @@
 import { NestFactory } from '@nestjs/core'
 import { Logger } from '@nestjs/common'
 
+import { config } from '@app/config'
+
 import { AppModule } from './app.module'
 
 async function bootstrap() {
@@ -8,7 +10,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
   await app.listen(PORT)
-  Logger.log(`Server is running using http://0.0.0.0:${PORT}`, 'Yardstick')
+  Logger.log(`Server is running using http://0.0.0.0:${PORT}`, config.projectName)
 }
 
 bootstrap()

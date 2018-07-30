@@ -1,0 +1,5 @@
+const configProd = {
+
+}
+
+export { configProd }

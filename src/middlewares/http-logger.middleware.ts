@@ -3,11 +3,13 @@ import { Logger } from '@nestjs/common'
 import * as morgan from 'morgan'
 import * as stream from 'stream'
 
+import { config } from '@app/config'
+
 class LoggerStream extends stream.Writable {
   _write(chunk, _encoding, next) {
     const cleanString = chunk.toString().trim()
 
-    Logger.log(cleanString, 'YardstickHTTP', false)
+    Logger.log(cleanString, `${config.projectName}-HTTP`, false)
     next()
   }
 }
