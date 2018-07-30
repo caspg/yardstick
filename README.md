@@ -40,10 +40,7 @@ $ npm run test:cov
 
 ## TODO
 
-* better loggin
-  * add HTTP requests logs
-
-  * display info about current PORT
+* ENV variables
 
 * setup Docker
 
