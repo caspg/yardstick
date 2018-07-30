@@ -37,3 +37,18 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## TODO
+
+* better loggin
+  * add HTTP requests logs
+
+  * display info about current PORT
+
+* setup Docker
+
+* create admin-web module
+
+* create CRUD for breweries (Brewery)
+
+* setup TravisCI
