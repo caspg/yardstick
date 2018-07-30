@@ -10,11 +10,9 @@
     "start:dev": "nodemon",
     "prestart:prod": "rm -rf dist && tsc",
     "start:prod": "node dist/main.js",
-    "start:hmr": "node dist/server",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "webpack": "webpack --config webpack.config.js"
+    "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^5.0.0",
@@ -40,10 +38,7 @@
     "ts-loader": "^4.1.0",
     "ts-node": "^4.1.0",
     "tsconfig-paths": "^3.1.1",
-    "tslint": "5.3.2",
-    "webpack": "^4.2.0",
-    "webpack-cli": "^2.0.13",
-    "webpack-node-externals": "^1.6.0"
+    "tslint": "5.3.2"
   },
   "jest": {
     "moduleFileExtensions": [
