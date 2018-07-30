@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Render } from '@nestjs/common'
 
 @Controller('/planets')
 class PlanetsController {
@@ -11,8 +11,9 @@ class PlanetsController {
   }
 
   @Get('/mars')
+  @Render('planets/mars')
   getOne() {
-    return 'Mars is red'
+    return { planet: 'Mars is red' }
   }
 }
 

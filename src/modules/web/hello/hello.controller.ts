@@ -1,10 +1,11 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Render } from '@nestjs/common'
 
 @Controller('/')
 class HelloController {
   @Get()
+  @Render('index')
   hello() {
-    return 'Hello forld from new structure!'
+    return { message: 'Hello world!' }
   }
 }
 
