@@ -25,13 +25,13 @@ Make sure you have docker installed locally [click](https://www.docker.com/commu
 then run:
 
 ```bash
-$ docker-compose -f docker-compose.dev.yml up
+$ docker-compose -f ./docker/dev/docker-compose.yml up
 ```
 
 You can run application in debugging mode with:
 
 ```bash
-$ docker-compose -f docker-compose.dev.yml run --service-ports web yarn start:inspect
+$ docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web yarn start:inspect
 ```
 
 then open `about:inspect` in Chrome.
