@@ -28,6 +28,14 @@ then run:
 $ docker-compose -f docker-compose.dev.yml up
 ```
 
+You can run application in debugging mode with:
+
+```bash
+$ docker-compose -f docker-compose.dev.yml run --service-ports web yarn start:inspect
+```
+
+then open `about:inspect` in Chrome.
+
 ## Running the app
 
 ```bash

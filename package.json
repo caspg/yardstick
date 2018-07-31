@@ -7,7 +7,8 @@
   "scripts": {
     "format": "prettier --write \"**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
-    "start:dev": "nodemon",
+    "start:dev": "nodemon --config ./configs/nodeamon.json",
+    "start:inspect": "nodemon --config ./configs/nodemon.inspect.json",
     "prestart:prod": "rm -rf dist && tsc",
     "start:prod": "node dist/server.js",
     "test": "jest",

@@ -12,4 +12,5 @@ services:
       # - /app/node_modules # container has its own node_modules directory
     ports:
       - "3000:3000"
+      - "9229:9229" # node debugger
     command: yarn start:dev
