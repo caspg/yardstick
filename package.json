@@ -5,6 +5,10 @@
   "author": "Kacper Goliński",
   "license": "MIT",
   "scripts": {
+    "ts-typeorm": "ts-node ./node_modules/.bin/typeorm",
+    "create:migration": "yarn run ts-typeorm migration:create -n",
+    "migrations": "yarn run ts-typeorm migration:run",
+    "migrations:revert": "yarn run ts-typeorm migration:revert",
     "format": "prettier --write \"**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
     "start:dev": "nodemon --config ./configs/nodeamon.json",

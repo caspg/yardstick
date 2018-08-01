@@ -10,7 +10,6 @@ services:
       NODE_ENV: 'development'
     volumes:
       - ../..:/app        # share your code with the containers
-      - /app/node_modules # container has its own node_modules directory
     ports:
       - "3000:3000"
       - "9229:9229" # node debugger
@@ -20,3 +19,6 @@ services:
 
   docker_postgres:
     image: postgres:10.3
+    environment:
+      POSTGRES_USER: postgress
+      POSTGRES_DB: yardstick_dev # TODO(kacper): use  env vars

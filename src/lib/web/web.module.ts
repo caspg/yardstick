@@ -1,4 +1,5 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common'
+import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { HelloModule } from './modules/hello/hello.module'
 import { PlanetsModule } from './modules/planets/planets.module'
@@ -12,6 +13,7 @@ import { HttpLogger } from './middlewares/http-logger.middleware'
   imports: [
     HelloModule,
     PlanetsModule,
+    TypeOrmModule.forRoot(),
   ],
 })
 class WebModule implements NestModule {

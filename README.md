@@ -34,6 +34,12 @@ You can run application in debugging mode with:
 $ docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web yarn start:inspect
 ```
 
+Opening bash inside docker:
+
+```bash
+docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web bash
+```
+
 then open `about:inspect` in Chrome.
 
 ## Running the app
@@ -47,6 +53,29 @@ $ npm run start:dev
 
 # production mode
 npm run start:prod
+```
+
+## Migrations
+
+[http://typeorm.io/#/migrations](http://typeorm.io/#/migrations)
+
+To create migration run:
+
+```bash
+yarn run create:migration migrationName
+```
+
+to run migrations:
+
+```bash
+yarn run migrations
+```
+
+to revert migrations:
+
+```bash
+yarn run migrations:revert
+
 ```
 
 ## Test
