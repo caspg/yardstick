@@ -6,16 +6,17 @@ services:
     build:
       context: ../..
       dockerfile: ./docker/dev/Dockerfile # we changed context above to the root of the project
-
     environment:
       NODE_ENV: 'development'
-
     volumes:
       - ../..:/app        # share your code with the containers
       - /app/node_modules # container has its own node_modules directory
-
     ports:
       - "3000:3000"
       - "9229:9229" # node debugger
-
     command: yarn start:dev
+    depends_on:
+      - docker_postgres
+
+  docker_postgres:
+    image: postgres:10.3
