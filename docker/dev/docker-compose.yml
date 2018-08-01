@@ -20,5 +20,5 @@ services:
   docker_postgres:
     image: postgres:10.3
     environment:
-      POSTGRES_USER: postgress
+      POSTGRES_USER: postgres
       POSTGRES_DB: yardstick_dev # TODO(kacper): use  env vars

@@ -22,6 +22,8 @@ $ npm install
 
 Make sure you have docker installed locally [click](https://www.docker.com/community-edition#/download)
 
+Postgres database is created by docker-compose.
+
 then run:
 
 ```bash
@@ -42,17 +44,10 @@ docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web b
 
 then open `about:inspect` in Chrome.
 
-## Running the app
+To open bash inside container without using docker-compose:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-npm run start:prod
+docker exec -it CONTAINER_NAME_OR_ID bash
 ```
 
 ## Migrations
