@@ -4,7 +4,7 @@ import { join } from 'path'
 
 import { config } from '@app/config'
 
-import { WebModule } from './lib/web/web.module'
+import { WebModule } from 'lib/web/web.module'
 
 async function bootstrap() {
   const PORT = process.env.PORT || 3000

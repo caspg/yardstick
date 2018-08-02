@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
-class Breweries {
+class Brewery {
   @PrimaryGeneratedColumn()
   id: number
 
@@ -18,4 +18,4 @@ class Breweries {
   longitude: number
 }
 
-export { Breweries }
+export { Brewery }

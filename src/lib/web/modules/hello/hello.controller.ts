@@ -1,22 +1,17 @@
 import { Controller, Get, Render } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { Repository } from 'typeorm'
 
-import { Breweries } from './breweries.entity'
+import { BreweryService } from '../../../core/modules/brewery/brewery.service'
 
 @Controller('/')
 class HelloController {
-  constructor(
-    @InjectRepository(Breweries)
-    private readonly breweryRepository: Repository<Breweries>,
-  ) {}
+  constructor(private readonly breweryService: BreweryService) {}
 
   @Get()
   @Render('hello/index')
-  async hello() {
-    const breweries = await this.breweryRepository.find()
-
-    return { breweries }
+  hello() {
+    debugger
+    return { message: 'Hello, world!' }
   }
 }
 
