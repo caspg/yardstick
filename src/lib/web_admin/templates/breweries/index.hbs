@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>App</title>
+</head>
+
+<body>
+  {{#each breweries}}
+    {{#each this}}
+      <h3>{{@key}}: {{this}}</h3>
+    {{/each}}
+  {{/each}}
+</body>
+
+</html>
