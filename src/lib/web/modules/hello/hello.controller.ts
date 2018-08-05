@@ -1,7 +1,6 @@
 import { Controller, Get, Render } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
 
-import { BreweryService } from '../../../core/modules/brewery/brewery.service'
+import { BreweryService } from '@app/core'
 
 @Controller('/')
 class HelloController {
@@ -10,8 +9,7 @@ class HelloController {
   @Get()
   @Render('hello/index')
   hello() {
-    debugger
-    return { message: 'Hello, world!' }
+    return { message: this.breweryService.yadaMessage() }
   }
 }
 

@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
+
+import { BreweryModule } from '@app/core'
 
 import { HelloController } from './hello.controller'
-import { BreweryModule } from '../../../core/modules/brewery/brewery.module'
 
 @Module({
   imports: [BreweryModule],

@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm'
 
@@ -13,6 +13,10 @@ class BreweryService {
 
   async findAll(): Promise<Brewery[]> {
     return await this.breweryRepository.find()
+  }
+
+  yadaMessage(): string {
+    return 'Yada yada'
   }
 }
 
