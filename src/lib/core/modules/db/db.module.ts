@@ -7,4 +7,4 @@ import { TypeOrmModule } from '@nestjs/typeorm'
   ],
   exports: [],
 })
-export class CoreModule {}
+export class DbModule {}
