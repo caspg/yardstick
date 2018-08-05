@@ -15,12 +15,12 @@ description
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app [DOCKER style]
 
-Make sure you have docker installed locally [click](https://www.docker.com/community-edition#/download)
+Make sure you have docker installed an running locally [click](https://www.docker.com/community-edition#/download)
 
 then run:
 
@@ -42,17 +42,44 @@ docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web b
 
 then open `about:inspect` in Chrome.
 
+To run psql in docker copy the postreg container id:
+
+```bash
+$ docker container ls
+```
+
+And use it to run:
+
+```bash
+$ docker exec -it [CONTAINER ID] bash
+```
+
+Then run:
+
+```bash
+$ psql -U postgres
+```
+In psql you can:
+
+```bash
+# connect to database
+$ \c yardstick_dev
+
+# show table
+$ \d breweries
+```
+
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-npm run start:prod
+yarn start:prod
 ```
 
 ## Migrations
