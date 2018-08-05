@@ -1,6 +1,6 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common'
 
-import { DbModule } from '@app/core'
+import { DbModule } from '@app/core/db'
 
 import { HelloModule } from './modules/hello/hello.module'
 import { PlanetsModule } from './modules/planets/planets.module'

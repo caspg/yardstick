@@ -16,7 +16,6 @@
     "paths": {
       "@app/config": ["config/config.ts"],
       "@app/config/helpers": ["config/helpers.ts"],
-      "@app/core": ["lib/core/index.ts"],
       "@app/core/*": ["lib/core/modules/*"]
     }
   },

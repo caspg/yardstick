@@ -1,6 +1,6 @@
 import { Controller, Get, Render } from '@nestjs/common'
 
-import { BreweryService } from '@app/core'
+import { BreweryService } from '@app/core/brewery'
 
 @Controller('/')
 class HelloController {
