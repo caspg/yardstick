@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm'
 
-import { Brewery } from './brewery.entity'
+import { Brewery } from '@app/core/brewery/brewery.entity'
 
 @Injectable()
 class BreweryService {

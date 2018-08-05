@@ -8,4 +8,6 @@ module.exports = {
   cli: {
     migrationsDir: ['src/lib/core/migrations'],
   },
+  // only during dev run migartions automatically
+  migrationsRun: process.env.NODE_ENV === 'development'
 }
