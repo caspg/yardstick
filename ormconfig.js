@@ -6,6 +6,6 @@ module.exports = {
   entities: [__dirname + '/src/**/*.entity{.ts,.js}'],
   migrations: [__dirname + '/src/lib/core/migrations/*.ts'],
   cli: {
-    migrationsDir: ['src/lib/web/migrations'],
+    migrationsDir: ['src/lib/core/migrations'],
   },
 }

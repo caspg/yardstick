@@ -13,6 +13,7 @@
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
     "start:dev": "nodemon",
     "start:inspect": "nodemon --config ./nodemon.inspect.json",
+    "start:debugg": "node inspect -r ts-node/register -r tsconfig-paths/register src/server.ts",
     "prestart:prod": "rm -rf dist && tsc",
     "start:prod": "node dist/server.js",
     "test": "jest",

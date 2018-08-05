@@ -1,2 +1,2 @@
-export * from './brewery.module'
-export * from './brewery.service'
+export * from '@app/core/brewery/brewery.module'
+export * from '@app/core/brewery/brewery.service'

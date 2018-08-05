@@ -36,19 +36,27 @@ You can run application in debugging mode with:
 $ docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web yarn start:inspect
 ```
 
+then open `about:inspect` in Chrome.
+
 Opening bash inside docker:
 
 ```bash
 docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web bash
 ```
 
-then open `about:inspect` in Chrome.
-
 To open bash inside container without using docker-compose:
 
 ```bash
 docker exec -it CONTAINER_NAME_OR_ID bash
 ```
+
+## Node.js debugging
+
+```bash
+yarn run start:debugg
+```
+
+https://nodejs.org/api/debugger.html
 
 ## Migrations
 

@@ -4,5 +4,5 @@
   ],
   "ext": "ts",
   "legacyWatch": true,
-  "exec": "node --inspect=0.0.0.0 -r ts-node/register -r tsconfig-paths/register src/server.ts"
+  "exec": "node --inspect=0.0.0.0:9229 -r ts-node/register -r tsconfig-paths/register src/server.ts"
 }
