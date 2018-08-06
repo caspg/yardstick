@@ -5,26 +5,32 @@ import { Repository } from 'typeorm'
 import { Breweries } from './breweries.entity'
 import { CreateBreweryDto } from './create-brewery.dto'
 
-@Controller('/admin/breweries/')
+@Controller('/admin')
 class AdminController {
   constructor(
     @InjectRepository(Breweries)
     private readonly breweryRepository: Repository<Breweries>,
   ) {}
 
-  @Post()
+  @Post('/breweries')
   async create(@Body() createBreweryDto: CreateBreweryDto) {
     return await this.breweryRepository.create(createBreweryDto)
   }
 
   @Get()
-  @Render('breweries/index')
+  @Render('breweries/admin')
+  root() {
+    return {}
+  }
+
+  @Get('/breweries')
+  @Render('breweries/all')
   async find() {
     const breweries = await this.breweryRepository.find()
     return { breweries }
   }
 
-  @Get('/:id')
+  @Get('/breweries/:id')
   @Render('breweries/single')
   async findOne(@Param() params) {
     const brewery = await this.breweryRepository.findOne(params.id)

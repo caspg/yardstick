@@ -7,10 +7,9 @@
 </head>
 
 <body>
+  <a href="/admin"><button>Back</button></a>
   {{#each breweries}}
-    {{#each this}}
-      <h3>{{@key}}: {{this}}</h3>
-    {{/each}}
+      <a href="/admin/breweries/{{id}}"><h3>{{id}}. {{name}}, {{city}}</h3></a>
   {{/each}}
 </body>
 
