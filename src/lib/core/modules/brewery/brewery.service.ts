@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { Repository } from 'typeorm'
+import { Repository, DeleteResult } from 'typeorm'
 
 import { Brewery } from '@app/core/brewery/brewery.entity'
 
@@ -22,6 +22,13 @@ class BreweryService {
   findBy(attrs: object): Promise<Brewery> {
     return this.breweryRepository.findOne(attrs)
   }
+
+  delete(id: number): Promise<DeleteResult> {
+    return this.breweryRepository.delete(id)
+  }
+
+  // TODO(Pjoter): create new `update(id, attrs: object)` method
+  // example: update(ID, { name: 'elo' })
 }
 
 export { BreweryService }

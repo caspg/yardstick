@@ -9,10 +9,11 @@
 <body>
     <a href="/admin/breweries"><button>Back</button></a>
     <a href="/admin/breweries/{{brewery.id}}/edit"><button>Edit</button></a>
-    {{!-- method-override module in app.js --}}
-    <form action="/admin/breweries/{{brewery.id}}?_method=DELETE" method="post">
+
+    <form action="/admin/breweries/123?_method=DELETE" method="post">
         <button type="submit" class="btn btn-default btn-danger">Delete</button>
     </form>
+
     {{#each brewery}}
         <h3>{{@key}}: {{this}}</h3>
     {{/each}}

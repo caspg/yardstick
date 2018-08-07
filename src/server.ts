@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 import { Logger } from '@nestjs/common'
 import { join } from 'path'
+import * as methodOverride from 'method-override'
 
 import { Config } from '@app/config'
 
@@ -12,6 +13,7 @@ async function bootstrap() {
 
   app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.setViewEngine('hbs')
+  app.use(methodOverride('_method'))
 
   await app.listen(port)
   Logger.log(`Server is running using http://0.0.0.0:${port}`, Config.values.projectName)

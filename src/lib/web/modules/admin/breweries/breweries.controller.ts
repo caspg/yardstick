@@ -6,6 +6,7 @@ import {
   Render,
   Param,
   Delete,
+  Response,
 } from '@nestjs/common'
 
 import { BreweryService } from '@app/core/brewery'
@@ -36,15 +37,19 @@ class BreweriesController {
     return {}
   }
 
+  // TODO(Piotr): GET /:id/edit action
+  // load Brewery by id
+  // pass brewery to template
+
   // @Put(':id')
   // update(@Param('id') id, @Body() updateBreweryDto) {
   //   return `This action updates a #${id} cat`
   // }
 
   @Delete(':id')
-  remove(@Param('id') id) {
-    console.log('deleted!')
-    return `This action removes a #${id} cat`
+  async remove(@Param('id') id, @Response()	res) {
+    const result = await this.breweryService.delete(id)
+    res.redirect('/admin/breweries')
   }
 }
 
