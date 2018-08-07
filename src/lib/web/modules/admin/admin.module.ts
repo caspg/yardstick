@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common'
-import { BreweriesController } from './breweries/breweries.controller'
 import { AdminController } from './admin.controller'
+import { BreweriesModule } from './breweries/breweries.module'
 
 @Module({
-  imports: [BreweriesController, AdminController],
+  imports: [BreweriesModule],
+  controllers: [AdminController],
 })
 export class AdminModule {}

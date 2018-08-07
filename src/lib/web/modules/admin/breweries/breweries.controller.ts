@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Render, Param } from '@nestjs/common'
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Render,
+  Param,
+  Delete,
+} from '@nestjs/common'
 
 import { BreweryService } from '@app/core/brewery'
 
@@ -33,10 +41,11 @@ class BreweriesController {
   //   return `This action updates a #${id} cat`
   // }
 
-  // @Delete(':id')
-  // remove(@Param('id') id) {
-  //   return `This action removes a #${id} cat`
-  // }
+  @Delete(':id')
+  remove(@Param('id') id) {
+    console.log('deleted!')
+    return `This action removes a #${id} cat`
+  }
 }
 
 export { BreweriesController }
