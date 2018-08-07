@@ -1,5 +1,3 @@
-const configProd = {
+export const configProd = {
 
 }
-
-export { configProd }

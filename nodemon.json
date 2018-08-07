@@ -3,8 +3,6 @@
     "src"
   ],
   "ext": "ts",
-  "ignore": [
-    "src/**/*.spec.ts"
-  ],
+  "legacyWatch": true,
   "exec": "ts-node -r tsconfig-paths/register src/server.ts"
 }

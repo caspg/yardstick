@@ -1,9 +1,9 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
+
+import { DbModule } from '@app/core/db'
 
 import { HelloModule } from './modules/hello/hello.module'
 import { PlanetsModule } from './modules/planets/planets.module'
-
 import { HttpLogger } from './middlewares/http-logger.middleware'
 
 /**
@@ -11,9 +11,9 @@ import { HttpLogger } from './middlewares/http-logger.middleware'
  */
 @Module({
   imports: [
+    DbModule,
     HelloModule,
     PlanetsModule,
-    TypeOrmModule.forRoot(),
   ],
 })
 class WebModule implements NestModule {

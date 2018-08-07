@@ -1,11 +1,15 @@
 import { Controller, Get, Render } from '@nestjs/common'
 
+import { BreweryService } from '@app/core/brewery'
+
 @Controller('/')
 class HelloController {
+  constructor(private readonly breweryService: BreweryService) {}
+
   @Get()
   @Render('hello/index')
   hello() {
-    return { message: 'Hello world!' }
+    return { message: this.breweryService.yadaMessage() }
   }
 }
 

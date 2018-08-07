@@ -1,5 +1,3 @@
-const configDev = {
+export const configDev = {
   projectName: 'YardstickDEV',
 }
-
-export { configDev }

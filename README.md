@@ -22,6 +22,8 @@ $ yarn install
 
 Make sure you have docker installed an running locally [click](https://www.docker.com/community-edition#/download)
 
+Postgres database is created by docker-compose.
+
 then run:
 
 ```bash
@@ -33,6 +35,8 @@ You can run application in debugging mode with:
 ```bash
 $ docker-compose -f ./docker/dev/docker-compose.yml run --rm --service-ports web yarn start:inspect
 ```
+
+then open `about:inspect` in Chrome.
 
 Opening bash inside docker:
 
@@ -69,18 +73,13 @@ $ \c yardstick_dev
 $ \d breweries
 ```
 
-## Running the app
+## Node.js debugging
 
 ```bash
-# development
-$ yarn start
-
-# watch mode
-$ yarn start:dev
-
-# production mode
-yarn start:prod
+yarn run start:debugg
 ```
+
+https://nodejs.org/api/debugger.html
 
 ## Migrations
 
