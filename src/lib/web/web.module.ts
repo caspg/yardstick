@@ -5,6 +5,7 @@ import { DbModule } from '@app/core/db'
 import { HelloModule } from './modules/hello/hello.module'
 import { PlanetsModule } from './modules/planets/planets.module'
 import { HttpLogger } from './middlewares/http-logger.middleware'
+import { AdminModule } from './modules/admin/breweries/breweries.module'
 
 /**
  * Main module for a web app.
@@ -14,6 +15,7 @@ import { HttpLogger } from './middlewares/http-logger.middleware'
     DbModule,
     HelloModule,
     PlanetsModule,
+    AdminModule,
   ],
 })
 class WebModule implements NestModule {

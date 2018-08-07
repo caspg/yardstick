@@ -1,1 +1,1 @@
-export * from './db.module'
+export * from '@app/core/db/db.module'

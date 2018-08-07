@@ -10,7 +10,7 @@ async function bootstrap() {
   const port = Config.port
   const app = await NestFactory.create(WebModule)
 
-  app.setBaseViewsDir(join(__dirname + '/lib/web_admin/templates'))
+  app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.setViewEngine('hbs')
 
   await app.listen(port)
