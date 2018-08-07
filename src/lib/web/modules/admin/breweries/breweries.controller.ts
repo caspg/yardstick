@@ -6,7 +6,7 @@ import { Breweries } from './breweries.entity'
 import { CreateBreweryDto } from './create-brewery.dto'
 
 @Controller('/admin')
-class AdminController {
+class BreweriesController {
   constructor(
     @InjectRepository(Breweries)
     private readonly breweryRepository: Repository<Breweries>,
@@ -18,20 +18,20 @@ class AdminController {
   }
 
   @Get()
-  @Render('breweries/admin')
+  @Render('admin/breweries/admin')
   root() {
     return {}
   }
 
-  @Get('/breweries')
-  @Render('breweries/all')
+  @Get('breweries')
+  @Render('admin/breweries/all')
   async find() {
     const breweries = await this.breweryRepository.find()
     return { breweries }
   }
 
   @Get('/breweries/:id')
-  @Render('breweries/single')
+  @Render('admin/breweries/single')
   async findOne(@Param() params) {
     const brewery = await this.breweryRepository.findOne(params.id)
     return { brewery }
@@ -48,4 +48,4 @@ class AdminController {
   // }
 }
 
-export { AdminController }
+export { BreweriesController }
