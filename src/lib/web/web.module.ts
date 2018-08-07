@@ -2,8 +2,6 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common'
 
 import { DbModule } from '@app/core/db'
 
-import { HelloModule } from './modules/hello/hello.module'
-import { PlanetsModule } from './modules/planets/planets.module'
 import { HttpLogger } from './middlewares/http-logger.middleware'
 import { AdminModule } from './modules/admin/breweries/breweries.module'
 
@@ -13,8 +11,6 @@ import { AdminModule } from './modules/admin/breweries/breweries.module'
 @Module({
   imports: [
     DbModule,
-    HelloModule,
-    PlanetsModule,
     AdminModule,
   ],
 })

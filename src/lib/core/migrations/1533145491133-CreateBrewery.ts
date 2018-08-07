@@ -15,7 +15,7 @@ export class CreateBreweries1533145491133 implements MigrationInterface {
 
   public async down(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.query(`
-      DROP TABLE breweries;
+      DROP TABLE brewery;
     `)
   }
 }
