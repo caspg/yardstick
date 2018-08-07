@@ -11,12 +11,16 @@ class BreweryService {
     private readonly breweryRepository: Repository<Brewery>,
   ) {}
 
-  async findAll(): Promise<Brewery[]> {
-    return await this.breweryRepository.find()
+  findAll(): Promise<Brewery[]> {
+    return this.breweryRepository.find()
   }
 
-  yadaMessage(): string {
-    return 'Yada yada'
+  find(id: number): Promise<Brewery> {
+    return this.breweryRepository.findOne(id)
+  }
+
+  findBy(attrs: object): Promise<Brewery> {
+    return this.breweryRepository.findOne(attrs)
   }
 }
 

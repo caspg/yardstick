@@ -1,40 +1,37 @@
-import { Controller, Get, Post, Put, Delete, Body, Render, Param } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
-import { Repository } from 'typeorm'
+import { Controller, Get, Post, Body, Render, Param } from '@nestjs/common'
 
-import { Breweries } from './breweries.entity'
-import { CreateBreweryDto } from './create-brewery.dto'
+import { BreweryService } from '@app/core/brewery'
+
+import { CreateBreweryDto } from '@app/core/brewery/create-brewery.dto'
 
 @Controller('/admin')
 class BreweriesController {
-  constructor(
-    @InjectRepository(Breweries)
-    private readonly breweryRepository: Repository<Breweries>,
-  ) {}
+  constructor(private readonly breweryService: BreweryService) {}
+
+  @Get('breweries')
+  @Render('admin/breweries/index')
+  async index() {
+    const breweries = await this.breweryService.findAll()
+    return { breweries }
+  }
+
+  @Get('/breweries/:id')
+  @Render('admin/breweries/show')
+  async show(@Param() params) {
+    const brewery = await this.breweryService.find(params.id)
+    return { brewery }
+  }
 
   @Post('/breweries')
   async create(@Body() createBreweryDto: CreateBreweryDto) {
-    return await this.breweryRepository.create(createBreweryDto)
+    // return await this.breweryRepository.create(createBreweryDto)
+    return {}
   }
 
   @Get()
   @Render('admin/breweries/admin')
   root() {
     return {}
-  }
-
-  @Get('breweries')
-  @Render('admin/breweries/all')
-  async find() {
-    const breweries = await this.breweryRepository.find()
-    return { breweries }
-  }
-
-  @Get('/breweries/:id')
-  @Render('admin/breweries/single')
-  async findOne(@Param() params) {
-    const brewery = await this.breweryRepository.findOne(params.id)
-    return { brewery }
   }
 
   // @Put(':id')
