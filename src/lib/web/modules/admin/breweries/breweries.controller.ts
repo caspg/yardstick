@@ -4,33 +4,27 @@ import { BreweryService } from '@app/core/brewery'
 
 import { CreateBreweryDto } from '@app/core/brewery/create-brewery.dto'
 
-@Controller('/admin')
+@Controller('/admin/breweries')
 class BreweriesController {
   constructor(private readonly breweryService: BreweryService) {}
 
-  @Get('breweries')
+  @Get('/')
   @Render('admin/breweries/index')
   async index() {
     const breweries = await this.breweryService.findAll()
     return { breweries }
   }
 
-  @Get('/breweries/:id')
+  @Get('/:id')
   @Render('admin/breweries/show')
   async show(@Param() params) {
     const brewery = await this.breweryService.find(params.id)
     return { brewery }
   }
 
-  @Post('/breweries')
+  @Post('/')
   async create(@Body() createBreweryDto: CreateBreweryDto) {
     // return await this.breweryRepository.create(createBreweryDto)
-    return {}
-  }
-
-  @Get()
-  @Render('admin/breweries/admin')
-  root() {
     return {}
   }
 
