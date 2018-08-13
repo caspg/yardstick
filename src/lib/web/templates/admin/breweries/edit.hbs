@@ -7,16 +7,15 @@
 </head>
 
 <body>
-  <h3>Do you see an id no. here? =>> {{brewery.id}}</h3>
   <form action="/admin/breweries/{{brewery.id}}?_method=PUT" method="post">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="i. e. Ol' Watering Hole">
+    <input value="{{brewery.name}}" type="text" id="name" name="name" placeholder="i. e. Ol' Watering Hole">
     <label for="city">City</label>
-    <input type="text" id="city" name="city" placeholder="i. e. East Nowherelington">
+    <input value="{{brewery.city}}" type="text" id="city" name="city" placeholder="i. e. East Nowherelington">
     <label for="latitude">Latitude</label>
-    <input type="text" id="latitude" name="latitude" placeholder="i. e. 0"></input>
+    <input value="{{brewery.latitude}}" type="text" id="latitude" name="latitude" placeholder="i. e. 0"></input>
     <label for="longitude">Longitude</label>
-    <input type="text" id="longitude" name="longitude" placeholder="i. e. 180"></input>
+    <input value="{{brewery.longitude}}" type="text" id="longitude" name="longitude" placeholder="i. e. 180"></input>
     <button type="submit" class="">Edit Brewery</button>
   </form>
 </body>

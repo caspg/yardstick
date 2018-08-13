@@ -26,9 +26,23 @@ class BreweriesController {
     return { breweries }
   }
 
+  @Get('new')
+  @Render('admin/breweries/new')
+  new() {
+    return {}
+  }
+
   @Get(':id')
   @Render('admin/breweries/show')
+  // show() and edit() are basically duplicate functions
   async show(@Param() params) {
+    const brewery = await this.breweryService.find(params.id)
+    return { brewery }
+  }
+
+  @Get(':id/edit')
+  @Render('admin/breweries/edit')
+  async edit(@Param() params) {
     const brewery = await this.breweryService.find(params.id)
     return { brewery }
   }
@@ -39,18 +53,15 @@ class BreweriesController {
     res.redirect('/admin/breweries')
   }
 
-  @Put(':id') // does not work in browser. works in postman though
+  @Put(':id')
   async update(
     @Param('id') id: number,
     @Body() updateBreweryDto: UpdateBreweryDto,
+    @Response() res,
   ) {
     await this.breweryService.update(id, updateBreweryDto)
-    return `This action updates a #${id} brewery`
+    res.redirect('/admin/breweries')
   }
-
-  // TODO(Piotr): GET /:id/edit action
-  // load Brewery by id
-  // pass brewery to template
 
   @Delete(':id')
   async remove(@Param('id') id, @Response() res) {
