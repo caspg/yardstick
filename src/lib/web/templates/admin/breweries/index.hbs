@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>App</title>
-</head>
-
-<body>
-  <a href="/admin">
-    <button>Back</button>
-  </a>
-  {{#each breweries}}
-  <a href="/admin/breweries/{{id}}">
-    <h3>{{id}}. {{name}}, {{city}}</h3>
-  </a>
-  {{/each}}
-</body>
-
-</html>
+<a href="/admin">
+  <button>Back</button>
+</a>
+{{#each breweries}}
+<a href="/admin/breweries/{{id}}">
+  <h3>{{id}}. {{name}}, {{city}}</h3>
+</a>
+{{/each}}
