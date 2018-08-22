@@ -14,7 +14,9 @@ class BreweryService {
   ) {}
 
   findAll(): Promise<Brewery[]> {
-    return this.breweryRepository.find()
+    return this.breweryRepository.find({
+      order: { id: 'DESC' },
+    })
   }
 
   find(id: number): Promise<Brewery> {
@@ -33,6 +35,7 @@ class BreweryService {
     const newBrewery = this.breweryRepository.create(createBreweryDto)
     return this.breweryRepository.save(newBrewery)
   }
+
   // probably an insert() will be a better idea
   update(
     id: number,
