@@ -3,8 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm'
 import { Repository, DeleteResult, UpdateResult } from 'typeorm'
 
 import { Brewery } from '@app/core/brewery/brewery.entity'
-import { CreateBreweryDto } from '@app/core/brewery/create-brewery.dto'
-import { UpdateBreweryDto } from '@app/core/brewery/update-brewery.dto'
+import { CreateBreweryDto } from '@app/core/brewery/dtos/create-brewery.dto'
+import { UpdateBreweryDto } from '@app/core/brewery/dtos/update-brewery.dto'
 
 @Injectable()
 class BreweryService {

@@ -12,8 +12,8 @@ import {
 
 import { BreweryService } from '@app/core/brewery'
 
-import { CreateBreweryDto } from '@app/core/brewery/create-brewery.dto'
-import { UpdateBreweryDto } from '@app/core/brewery/update-brewery.dto'
+import { CreateBreweryDto } from '@app/core/brewery/dtos/create-brewery.dto'
+import { UpdateBreweryDto } from '@app/core/brewery/dtos/update-brewery.dto'
 
 @Controller('/admin/breweries')
 class BreweriesController {
