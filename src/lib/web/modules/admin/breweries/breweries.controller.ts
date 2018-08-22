@@ -34,7 +34,6 @@ class BreweriesController {
 
   @Get(':id')
   @Render('admin/breweries/show')
-  // show() and edit() are basically duplicate functions
   async show(@Param() params) {
     const brewery = await this.breweryService.find(params.id)
     return { brewery }

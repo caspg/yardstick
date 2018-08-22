@@ -36,7 +36,6 @@ class BreweryService {
     return this.breweryRepository.save(newBrewery)
   }
 
-  // probably an insert() will be a better idea
   update(
     id: number,
     updateBreweryDto: UpdateBreweryDto,
