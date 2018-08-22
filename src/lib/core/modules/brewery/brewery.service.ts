@@ -33,7 +33,7 @@ class BreweryService {
     const newBrewery = this.breweryRepository.create(createBreweryDto)
     return this.breweryRepository.save(newBrewery)
   }
-
+  // probably an insert() will be a better idea
   update(
     id: number,
     updateBreweryDto: UpdateBreweryDto,

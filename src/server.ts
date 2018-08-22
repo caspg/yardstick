@@ -14,9 +14,13 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.setViewEngine('hbs')
   app.use(methodOverride('_method'))
+  app.set('view options', { layout: 'layout' })
 
   await app.listen(port)
-  Logger.log(`Server is running using http://0.0.0.0:${port}`, Config.values.projectName)
+  Logger.log(
+    `Server is running using http://0.0.0.0:${port}`,
+    Config.values.projectName,
+  )
 }
 
 bootstrap()
