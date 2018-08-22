@@ -13,12 +13,6 @@ async function bootstrap() {
   const app = await NestFactory.create(WebModule)
   const publicPath = join(__dirname, '..', 'public')
 
-  console.log('****************')
-  console.log('publicPath: ', publicPath)
-  console.log('src: ', join(__dirname, '/lib/web/styles'))
-  console.log('dest: ', join(publicPath, '/styles'))
-  console.log('****************')
-
   app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.setViewEngine('hbs')
   app.use(methodOverride('_method'))
