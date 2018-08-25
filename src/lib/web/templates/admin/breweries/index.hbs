@@ -1,8 +1,25 @@
 <a href="/admin">
-  <button>Back</button>
+  <button class="btn btn-outline-primary">Back</button>
 </a>
-{{#each breweries}}
-<a href="/admin/breweries/{{id}}">
-  <h3>{{id}}. {{name}}, {{city}}</h3>
-</a>
-{{/each}}
+{{#if breweries}}
+<table class="table table-bordered table-hover">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>City</th>
+  </thead>
+  <tbody>
+    {{#each breweries}}
+    <tr>
+      <td>{{id}}</td>
+      <td>
+        <a href="/admin/breweries/{{id}}">{{name}}</a>
+      </td>
+      <td>{{city}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<div class="alert alert-danger">There should be a table here</div>
+{{/if}}

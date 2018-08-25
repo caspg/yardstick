@@ -3,6 +3,7 @@ import { Logger } from '@nestjs/common'
 import { join } from 'path'
 import * as methodOverride from 'method-override'
 import * as sassMiddleware from 'node-sass-middleware'
+import * as hbs from 'hbs'
 
 import { Config } from '@app/config'
 
@@ -16,7 +17,8 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.setViewEngine('hbs')
   app.use(methodOverride('_method'))
-  app.set('view options', { layout: 'layouts/admin_layout' })
+  app.set('view options', { layout: '/layouts/admin_layout' })
+  hbs.registerPartials(__dirname + '/lib/web/templates/admin/partials')
   app.use(
     sassMiddleware({
       src: join(__dirname, '/lib/web/styles'),

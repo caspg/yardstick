@@ -1,11 +1,11 @@
 <a href="/admin/breweries">
-  <button>Back</button>
+  <button class="btn btn-outline-primary">Back</button>
 </a>
 <a href="/admin/breweries/{{brewery.id}}/edit">
-  <button>Edit</button>
+  <button class="btn btn-outline-primary">Edit</button>
 </a>
-<form action="/admin/breweries/{{brewery.id}}?_method=DELETE" method="post">
-  <button type="submit" class="btn btn-default btn-danger">Delete</button>
+<button form="show" type="submit" class="btn btn-outline-danger">Delete</button>
+<form id="show" action="/admin/breweries/{{brewery.id}}?_method=DELETE" method="post">
 </form>
 {{#each brewery}}
 <h3>{{@key}}: {{this}}</h3>

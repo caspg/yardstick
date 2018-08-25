@@ -1,3 +1,19 @@
-body {
-  background-color: blue;
+html {
+  font-size: 21px;
+}
+
+.bg-near-white {
+  background-color: #f4f4f4;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.measure-wide {
+  max-width: 34em;
+}
+
+.lh-main {
+  line-height: 1.5;
 }
