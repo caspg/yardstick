@@ -1,25 +1,29 @@
-<a href="/admin">
-  <button class="btn btn-outline-primary">Back</button>
-</a>
-{{#if breweries}}
-<table class="table table-bordered table-hover">
-  <thead>
-    <th>ID</th>
-    <th>Name</th>
-    <th>City</th>
-  </thead>
-  <tbody>
-    {{#each breweries}}
-    <tr>
-      <td>{{id}}</td>
-      <td>
-        <a href="/admin/breweries/{{id}}">{{name}}</a>
-      </td>
-      <td>{{city}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
-{{else}}
-<div class="alert alert-danger">There should be a table here</div>
-{{/if}}
+<div class="margin-b">
+  <a href="/admin">
+    <button class="btn btn-outline-secondary">Back</button>
+  </a>
+</div>
+<div>
+  {{#if breweries}}
+  <table class="table table-bordered table-hover table-sm">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>City</th>
+    </thead>
+    <tbody>
+      {{#each breweries}}
+      <tr>
+        <td>{{id}}</td>
+        <td>
+          <a href="/admin/breweries/{{id}}">{{name}}</a>
+        </td>
+        <td>{{city}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <div class="alert alert-danger">There should be a table here</div>
+  {{/if}}
+</div>

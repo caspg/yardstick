@@ -1,12 +1,18 @@
-<a href="/admin/breweries">
-  <button class="btn btn-outline-primary">Back</button>
-</a>
-<a href="/admin/breweries/{{brewery.id}}/edit">
-  <button class="btn btn-outline-primary">Edit</button>
-</a>
-<button form="show" type="submit" class="btn btn-outline-danger">Delete</button>
-<form id="show" action="/admin/breweries/{{brewery.id}}?_method=DELETE" method="post">
-</form>
-{{#each brewery}}
-<h3>{{@key}}: {{this}}</h3>
-{{/each}}
+<div class="margin-b">
+  <a href="/admin/breweries">
+    <button class="btn btn-outline-secondary">Back</button>
+  </a>
+  <a href="/admin/breweries/{{brewery.id}}/edit">
+    <button class="btn btn-outline-secondary">Edit</button>
+  </a>
+  <button form="show" type="submit" class="btn btn-outline-danger">Delete</button>
+  <form id="show" action="/admin/breweries/{{brewery.id}}?_method=DELETE" method="post">
+  </form>
+</div>
+<div>
+  <ul>
+    <h4>{{brewery.name}}</h4>
+    <li>City: {{brewery.city}}</li>
+    <li>Coordinates: {{brewery.latitude}}&deg {{brewery.longitude}}&deg</li>
+  </ul>
+</div>

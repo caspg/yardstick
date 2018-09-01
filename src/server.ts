@@ -22,10 +22,11 @@ async function bootstrap() {
   app.use(
     sassMiddleware({
       src: join(__dirname, '/lib/web/styles'),
-      dest: join(publicPath, '/styles'),
+      dest: join(__dirname, '../public'),
       indentedSyntax: false, // true = .sass and false = .scss
       sourceMap: true,
       debug: !Config.isProd,
+      // prefix: '/public',
     }),
   )
   app.useStaticAssets(publicPath)

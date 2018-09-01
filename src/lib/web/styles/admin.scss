@@ -17,3 +17,27 @@ html {
 .lh-main {
   line-height: 1.5;
 }
+
+.border-b {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #999;
+}
+
+.margin-b {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 10px;
+}
+
+.left {
+  grid-column: 1/2;
+}
+
+.right {
+  grid-column: 2/3;
+}
