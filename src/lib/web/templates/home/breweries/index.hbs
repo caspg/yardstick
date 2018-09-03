@@ -1,0 +1,24 @@
+<div class="grid">
+  <div class="left">
+    {{#each breweries}}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{city}}</h6>
+        <a href="#" class="card-link">Card link</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="right" id="map"></div>
+</div>
+<script>
+  function initMap() {
+    var uluru = { lat: -25.344, lng: 131.036 };
+    var map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 4, center: uluru });
+    var marker = new google.maps.Marker({ position: uluru, map: map });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=${process.env.GMAPS_API_KEY}&callback=initMap">
+</script>
