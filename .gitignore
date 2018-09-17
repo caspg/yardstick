@@ -9,3 +9,5 @@ public/*
 !public/.gitkeep
 
 .env
+
+.vscode

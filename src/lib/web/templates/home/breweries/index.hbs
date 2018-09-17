@@ -12,13 +12,6 @@
   </div>
   <div class="right" id="map"></div>
 </div>
-<script>
-  function initMap() {
-    var uluru = { lat: -25.344, lng: 131.036 };
-    var map = new google.maps.Map(
-      document.getElementById('map'), { zoom: 4, center: uluru });
-    var marker = new google.maps.Marker({ position: uluru, map: map });
-  }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=${process.env.GMAPS_API_KEY}&callback=initMap">
+<script src="/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GMAPS_API_KEY}}&callback=initMap">
 </script>
