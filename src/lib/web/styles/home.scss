@@ -11,7 +11,7 @@ html {
 }
 
 .measure-wide {
-  max-width: 34em;
+  max-width: 60em;
 }
 
 .lh-main {
@@ -30,7 +30,7 @@ html {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 30% 70%;
   grid-gap: 10px;
 }
 
