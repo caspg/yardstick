@@ -10,7 +10,7 @@ class HomeController {
   async index(@Res() res) {
     const breweries = await this.breweryService.findAll()
 
-    res.render('home/breweries/index', {
+    res.render('home/index', {
       breweries,
       breweriesJson: JSON.stringify(breweries),
       layout: 'layouts/home_layout',
