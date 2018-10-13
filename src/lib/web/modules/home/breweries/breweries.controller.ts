@@ -8,8 +8,11 @@ class HomeBreweriesController {
 
   @Get()
   async index(@Res() res) {
+    const breweries = await this.breweryService.findAll()
+
     res.render('home/breweries/index', {
-      breweries: await this.breweryService.findAll(),
+      breweries,
+      breweriesJson: JSON.stringify(breweries),
       layout: 'layouts/home_layout',
     })
   }
