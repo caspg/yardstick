@@ -1,0 +1,24 @@
+<div class="margin-b">
+  <a href="/home">
+    <button class="btn btn-outline-secondary">Back</button>
+  </a>
+  <button form="search" type="submit" class="btn btn-outline-secondary">Search</button>
+  <input type="text" id="search" name="search" placeholder="i. e. Warsaw">
+</div>
+<div class="grid">
+  <div class="left">
+    {{#each breweries}}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{city}}</h6>
+        <a href="#" class="card-link">Card link</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="right" id="map"></div>
+</div>
+<script src="/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GMAPS_API_KEY}}&callback=initMap">
+</script>

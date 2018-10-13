@@ -7,3 +7,8 @@ dist/
 
 public/*
 !public/.gitkeep
+!public/main.js
+
+.env
+
+.vscode

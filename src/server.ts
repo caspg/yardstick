@@ -14,9 +14,8 @@ async function bootstrap() {
   const app = await NestFactory.create(WebModule)
   const publicPath = join(__dirname, '..', 'public')
 
-  app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.setViewEngine('hbs')
-  app.use(methodOverride('_method'))
+  app.setBaseViewsDir(join(__dirname + '/lib/web/templates'))
   app.set('view options', { layout: '/layouts/admin_layout' })
   hbs.registerPartials(__dirname + '/lib/web/templates/admin/partials')
   app.use(
@@ -29,6 +28,7 @@ async function bootstrap() {
       // prefix: '/public',
     }),
   )
+  app.use(methodOverride('_method'))
   app.useStaticAssets(publicPath)
 
   await app.listen(port)
