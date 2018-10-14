@@ -2,7 +2,7 @@
   window.yardstick = window.yardstick || {}
   window.yardstick.breweries = {{{breweriesJson}}}
 
-  {{!--TODO: get current user location--}}
+  {{!-- TODO: get current user location --}}
 
   function initMap() {
     const breweries = window.yardstick.breweries
@@ -25,16 +25,13 @@
 
 <div class="breweries-container">
   <div class="breweries-list">
-    {{#each breweries}}
-    <a href="/{{id}}">
     <div class="card brewery-card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{city}}</h6>
+        <h5 class="card-title">{{brewery.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{brewery.city}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Coordinates: {{brewery.latitude}}&deg {{brewery.longitude}}&deg</h6>
       </div>
     </div>
-    </a>
-    {{/each}}
   </div>
 
   <div class="breweries-map" id="map"></div>
