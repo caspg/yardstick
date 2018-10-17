@@ -1,4 +1,4 @@
-import { Controller, Get, Render, Res } from '@nestjs/common'
+import { Controller, Get, Render, Res, Param } from '@nestjs/common'
 
 import { BreweryService } from '@app/core/brewery'
 
@@ -12,6 +12,18 @@ class HomeController {
 
     res.render('home/index', {
       breweries,
+      breweriesJson: JSON.stringify(breweries),
+      layout: 'layouts/home_layout',
+    })
+  }
+
+  @Get(':id')
+  async show(@Param() params, @Res() res) {
+    const breweries = await this.breweryService.findAll()
+    const brewery = await this.breweryService.find(params.id)
+
+    res.render('home/show', {
+      brewery,
       breweriesJson: JSON.stringify(breweries),
       layout: 'layouts/home_layout',
     })
