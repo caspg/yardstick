@@ -17,7 +17,7 @@ function createEntryObjecy() {
 }
 
 module.exports = {
-  entry: entryObject,
+  entry: createEntryObjecy(),
   mode: 'development', // TODO
   output: {
     path: path.resolve(__dirname, 'public', 'js'),

@@ -1,3 +1,3 @@
 export function hello(): string {
-  return 'Hello from hello.ts'
+  return 'Hello, from hello.ts!'
 }
