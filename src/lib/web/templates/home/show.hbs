@@ -32,21 +32,11 @@
       google.maps.event.addListener(marker,'click', (function(marker,infowindow){
           return function() {
             infowindow.open(map,marker);
+            map.setZoom(8);
+            map.setCenter(marker.getPosition());
           };
       })(marker,infowindow));
-
     })
-
-
-
-
-
-    {{!-- marker.addListener('click', function() {
-      infowindow.open(map, marker)
-      window.location.href = brewery.id;
-      map.setZoom(8);
-      map.setCenter(marker.getPosition());
-    }); --}}
   }
 </script>
 
