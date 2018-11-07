@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common'
-
+import { AppController } from './app.controller'
 import { BreweryModule as CoreBreweryModule } from '@app/core/brewery'
-
-import { HomeBreweriesController } from './breweries.controller'
 
 @Module({
   imports: [CoreBreweryModule],
-  controllers: [HomeBreweriesController],
+  controllers: [AppController],
 })
-export class HomeBreweriesModule {}
+export class AppModule {}

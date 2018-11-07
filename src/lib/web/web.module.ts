@@ -4,13 +4,13 @@ import { DbModule } from '@app/core/db'
 
 import { HttpLogger } from './middlewares/http-logger.middleware'
 import { AdminModule } from './modules/admin/admin.module'
-import { HomeModule } from './modules/home/home.module'
+import { AppModule } from './modules/app/app.module'
 
 /**
  * Main module for a web app.
  */
 @Module({
-  imports: [DbModule, AdminModule, HomeModule],
+  imports: [DbModule, AdminModule, AppModule],
 })
 class WebModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

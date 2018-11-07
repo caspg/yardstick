@@ -10,8 +10,9 @@
     "migrations": "yarn run ts-typeorm migration:run",
     "migrations:revert": "yarn run ts-typeorm migration:revert",
     "format": "prettier --write \"**/*.ts\"",
+    "start:client:watch": "webpack -w",
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
-    "start:dev": "nodemon",
+    "start:dev": "concurrently \"nodemon\" \"yarn run start:client:watch\"",
     "start:inspect": "nodemon --config ./nodemon.inspect.json",
     "start:debugg": "node inspect -r ts-node/register -r tsconfig-paths/register src/server.ts",
     "prestart:prod": "rm -rf dist && tsc",
@@ -24,6 +25,8 @@
     "@nestjs/common": "^5.0.0",
     "@nestjs/core": "^5.0.0",
     "@nestjs/typeorm": "^5.1.0",
+    "@types/googlemaps": "^3.30.16",
+    "concurrently": "^4.0.1",
     "fastify-formbody": "^2.0.0",
     "hbs": "^4.0.1",
     "method-override": "^3.0.0",
@@ -41,6 +44,7 @@
     "@types/morgan": "^1.7.35",
     "@types/node": "^9.3.0",
     "@types/supertest": "^2.0.4",
+    "awesome-typescript-loader": "^5.2.1",
     "dotenv": "^6.0.0",
     "jest": "^21.2.1",
     "node-sass-middleware": "^0.11.0",
@@ -52,7 +56,9 @@
     "ts-node": "^4.1.0",
     "tsconfig-paths": "^3.1.1",
     "tslint": "5.3.2",
-    "tslint-config-prettier": "^1.14.0"
+    "tslint-config-prettier": "^1.14.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   },
   "jest": {
     "moduleFileExtensions": [
