@@ -25,6 +25,7 @@
     "@nestjs/common": "^5.0.0",
     "@nestjs/core": "^5.0.0",
     "@nestjs/typeorm": "^5.1.0",
+    "@types/googlemaps": "^3.30.16",
     "concurrently": "^4.0.1",
     "fastify-formbody": "^2.0.0",
     "hbs": "^4.0.1",

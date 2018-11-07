@@ -1,42 +1,6 @@
 <script>
   window.yardstick = window.yardstick || {}
   window.yardstick.breweries = {{{breweriesJson}}}
-
-  {{!--TODO: get current user location--}}
-
-  function initMap() {
-    const breweries = window.yardstick.breweries
-    let map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: { lat: 52, lng: 13 },
-    })
-
-    breweries.forEach((brewery) => {
-      marker = new google.maps.Marker({
-        position: {
-          lat: brewery.latitude,
-          lng: brewery.longitude,
-        },
-        map,
-      })
-      infowindow = new google.maps.InfoWindow({
-        content: brewery.name
-      })
-
-      google.maps.event.addListener(map, 'click', (function(infowindow) {
-        return function() {
-          infowindow.close();
-        }
-      })(infowindow));
-
-      google.maps.event.addListener(marker,'click', (function(marker,infowindow){
-          return function() {
-            infowindow.open(map,marker);
-            //window.location.href = brewery.id;
-          };
-      })(marker,infowindow));
-    })
-  }
 </script>
 
 <div class="breweries-container">
@@ -55,5 +19,3 @@
 
   <div class="breweries-map" id="map"></div>
 </div>
-
-<script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GMAPS_API_KEY}}&callback=initMap"></script>
