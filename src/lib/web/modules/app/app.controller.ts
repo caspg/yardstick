@@ -3,7 +3,7 @@ import { Controller, Get, Render, Res, Param } from '@nestjs/common'
 import { BreweryService } from '@app/core/brewery'
 
 @Controller('/')
-class HomeController {
+class AppController {
   constructor(private readonly breweryService: BreweryService) {}
 
   @Get()
@@ -13,7 +13,7 @@ class HomeController {
     res.render('home/index', {
       breweries,
       breweriesJson: JSON.stringify(breweries),
-      layout: 'layouts/home_layout',
+      layout: 'layouts/app_layout',
     })
   }
 
@@ -24,10 +24,11 @@ class HomeController {
 
     res.render('home/show', {
       brewery,
+      breweryJson: JSON.stringify(brewery),
       breweriesJson: JSON.stringify(breweries),
-      layout: 'layouts/home_layout',
+      layout: 'layouts/app_layout',
     })
   }
 }
 
-export { HomeController }
+export { AppController }
